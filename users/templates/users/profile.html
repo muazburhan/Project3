@@ -1,0 +1,10 @@
+{% extends "market/base.html" %}
+{% block content %}
+<h1>{{ user.username }}</h1>
+	{% for item in items %}
+		{% if item.user_id == user.id %}
+			<a href="https://ultimatemarketplace.net/{{item.id}}">{{ item.title}}</a>
+		{% endif %}
+	{% endfor %}
+	<a href="https://ultimatemarketplace.net/item/add">Sell</a>
+{% endblock %}
